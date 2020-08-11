@@ -1,16 +1,10 @@
 import {HttpShelveRepository} from './HttpShelveRepository';
-import sinon, {SinonStub} from 'sinon';
-import {AxiosError, AxiosInstance} from 'axios';
+
+import {AxiosError} from 'axios';
 import {StripLed8} from '../domain/StripLed8';
 import {StripLed16} from '../domain/StripLed16';
-
-interface AxiosInstanceStub extends AxiosInstance {
-  get: SinonStub;
-  put: SinonStub;
-  post: SinonStub;
-  delete: SinonStub;
-
-}
+import {AxiosInstanceStub} from './AxiosInstanceStub';
+import * as sinon from 'sinon';
 
 const stubAxiosInstance = (): AxiosInstanceStub => ({
   get: sinon.stub(),
